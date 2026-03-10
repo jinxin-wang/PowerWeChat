@@ -72,3 +72,80 @@ type RequestDecodeSensitiveInfo struct {
 	OrderID       string `json:"order_id"`
 	EncryptedData string `json:"encrypted_data"`
 }
+
+// RequestUploadFreshInsurance 上传生鲜商品质检信息请求
+type RequestUploadFreshInsurance struct {
+	OrderID       string `json:"order_id"`
+	InsuranceInfo string `json:"insurance_info"`
+}
+
+// RequestAddGiftOrderNote 添加礼品订单备注请求
+type RequestAddGiftOrderNote struct {
+	OrderID string `json:"order_id"`
+	Note    string `json:"note"`
+}
+
+// RequestGetGiftOrderSubList 获取礼品订单子单列表请求
+type RequestGetGiftOrderSubList struct {
+	OrderID  string `json:"order_id"`
+	PageSize int    `json:"page_size,omitempty"`
+	NextKey  string `json:"next_key,omitempty"`
+}
+
+// RequestGetSKUChangeList 获取待发货SKU变更列表请求
+type RequestGetSKUChangeList struct {
+	OrderID  string `json:"order_id"`
+	PageSize int    `json:"page_size,omitempty"`
+	NextKey  string `json:"next_key,omitempty"`
+}
+
+// RequestAcceptSKUChange 接受SKU变更请求
+type RequestAcceptSKUChange struct {
+	OrderID     string `json:"order_id"`
+	SKUChangeID string `json:"sku_change_id"`
+}
+
+// RequestRejectSKUChange 拒绝SKU变更请求
+type RequestRejectSKUChange struct {
+	OrderID     string `json:"order_id"`
+	SKUChangeID string `json:"sku_change_id"`
+	Reason      string `json:"reason"`
+}
+
+// RequestApplyRealNumber 申请查看真实号码请求
+type RequestApplyRealNumber struct {
+	OrderID string `json:"order_id"`
+	Reason  string `json:"reason"`
+}
+
+// RequestGetRealNumberStatus 查询真实号码审核状态请求
+type RequestGetRealNumberStatus struct {
+	ApplyID string `json:"apply_id"`
+}
+
+// RequestReapplyVirtualNumber 重新申请虚拟号请求
+type RequestReapplyVirtualNumber struct {
+	OrderID string `json:"order_id"`
+}
+
+// RequestDelayVirtualNumber 延期虚拟号有效期请求
+type RequestDelayVirtualNumber struct {
+	OrderID   string `json:"order_id"`
+	DelayDays int    `json:"delay_days"`
+}
+
+// RequestAddPhoneVerifyCode 添加手机号用于核验请求
+type RequestAddPhoneVerifyCode struct {
+	OrderID string `json:"order_id"`
+	Phone   string `json:"phone"`
+}
+
+// RequestSendPhoneVerifyCode 获取短信验证码请求
+type RequestSendPhoneVerifyCode struct {
+	OrderID string `json:"order_id"`
+}
+
+// RequestGetPhoneStatus 获取店铺手机号核验状态请求
+type RequestGetPhoneStatus struct {
+	OrderID string `json:"order_id"`
+}

@@ -214,3 +214,191 @@ func TestResponseDecodeSensitiveInfo(t *testing.T) {
 	assert.Equal(t, "13700137000", resp.TelNumber)
 	assert.Equal(t, "详细地址", resp.DetailInfo)
 }
+
+// Batch 2 API Tests
+
+func TestRequestUploadFreshInsurance(t *testing.T) {
+	req := &RequestUploadFreshInsurance{
+		OrderID:       "order_fresh_123",
+		InsuranceInfo: "质检通过",
+	}
+
+	assert.Equal(t, "order_fresh_123", req.OrderID)
+	assert.Equal(t, "质检通过", req.InsuranceInfo)
+}
+
+func TestRequestAddGiftOrderNote(t *testing.T) {
+	req := &RequestAddGiftOrderNote{
+		OrderID: "order_gift_123",
+		Note:    "礼品订单备注",
+	}
+
+	assert.Equal(t, "order_gift_123", req.OrderID)
+	assert.Equal(t, "礼品订单备注", req.Note)
+}
+
+func TestRequestGetGiftOrderSubList(t *testing.T) {
+	req := &RequestGetGiftOrderSubList{
+		OrderID:  "order_gift_456",
+		PageSize: 20,
+		NextKey:  "next_key",
+	}
+
+	assert.Equal(t, "order_gift_456", req.OrderID)
+	assert.Equal(t, 20, req.PageSize)
+	assert.Equal(t, "next_key", req.NextKey)
+}
+
+func TestResponseGetGiftOrderSubList(t *testing.T) {
+	resp := &ResponseGetGiftOrderSubList{
+		SubOrderList: []SubOrderInfo{
+			{SubOrderID: "sub_1"},
+			{SubOrderID: "sub_2"},
+		},
+		NextKey: "next_page",
+		HasMore: true,
+	}
+
+	assert.Equal(t, 2, len(resp.SubOrderList))
+	assert.Equal(t, "sub_1", resp.SubOrderList[0].SubOrderID)
+	assert.Equal(t, true, resp.HasMore)
+}
+
+func TestRequestGetSKUChangeList(t *testing.T) {
+	req := &RequestGetSKUChangeList{
+		OrderID:  "order_sku_123",
+		PageSize: 10,
+		NextKey:  "key",
+	}
+
+	assert.Equal(t, "order_sku_123", req.OrderID)
+	assert.Equal(t, 10, req.PageSize)
+}
+
+func TestResponseGetSKUChangeList(t *testing.T) {
+	resp := &ResponseGetSKUChangeList{
+		SKUChangeList: []SKUChangeInfo{
+			{
+				SKUChangeID: "change_1",
+				OrderID:     "order_1",
+				Status:      1,
+			},
+		},
+		HasMore: false,
+	}
+
+	assert.Equal(t, 1, len(resp.SKUChangeList))
+	assert.Equal(t, "change_1", resp.SKUChangeList[0].SKUChangeID)
+}
+
+func TestRequestAcceptSKUChange(t *testing.T) {
+	req := &RequestAcceptSKUChange{
+		OrderID:     "order_123",
+		SKUChangeID: "change_123",
+	}
+
+	assert.Equal(t, "order_123", req.OrderID)
+	assert.Equal(t, "change_123", req.SKUChangeID)
+}
+
+func TestRequestRejectSKUChange(t *testing.T) {
+	req := &RequestRejectSKUChange{
+		OrderID:     "order_456",
+		SKUChangeID: "change_456",
+		Reason:      "库存不足",
+	}
+
+	assert.Equal(t, "order_456", req.OrderID)
+	assert.Equal(t, "库存不足", req.Reason)
+}
+
+func TestRequestApplyRealNumber(t *testing.T) {
+	req := &RequestApplyRealNumber{
+		OrderID: "order_real_123",
+		Reason:  "售后需要",
+	}
+
+	assert.Equal(t, "order_real_123", req.OrderID)
+	assert.Equal(t, "售后需要", req.Reason)
+}
+
+func TestResponseApplyRealNumber(t *testing.T) {
+	resp := &ResponseApplyRealNumber{
+		ApplyID: "apply_123",
+	}
+
+	assert.Equal(t, "apply_123", resp.ApplyID)
+}
+
+func TestRequestGetRealNumberStatus(t *testing.T) {
+	req := &RequestGetRealNumberStatus{
+		ApplyID: "apply_456",
+	}
+
+	assert.Equal(t, "apply_456", req.ApplyID)
+}
+
+func TestResponseGetRealNumberStatus(t *testing.T) {
+	resp := &ResponseGetRealNumberStatus{
+		Status:      1,
+		PhoneNumber: "13800138000",
+		AuditResult: "通过",
+	}
+
+	assert.Equal(t, 1, resp.Status)
+	assert.Equal(t, "13800138000", resp.PhoneNumber)
+}
+
+func TestRequestReapplyVirtualNumber(t *testing.T) {
+	req := &RequestReapplyVirtualNumber{
+		OrderID: "order_virtual_123",
+	}
+
+	assert.Equal(t, "order_virtual_123", req.OrderID)
+}
+
+func TestRequestDelayVirtualNumber(t *testing.T) {
+	req := &RequestDelayVirtualNumber{
+		OrderID:   "order_virtual_456",
+		DelayDays: 7,
+	}
+
+	assert.Equal(t, "order_virtual_456", req.OrderID)
+	assert.Equal(t, 7, req.DelayDays)
+}
+
+func TestRequestAddPhoneVerifyCode(t *testing.T) {
+	req := &RequestAddPhoneVerifyCode{
+		OrderID: "order_phone_123",
+		Phone:   "13900139000",
+	}
+
+	assert.Equal(t, "order_phone_123", req.OrderID)
+	assert.Equal(t, "13900139000", req.Phone)
+}
+
+func TestRequestSendPhoneVerifyCode(t *testing.T) {
+	req := &RequestSendPhoneVerifyCode{
+		OrderID: "order_phone_456",
+	}
+
+	assert.Equal(t, "order_phone_456", req.OrderID)
+}
+
+func TestRequestGetPhoneStatus(t *testing.T) {
+	req := &RequestGetPhoneStatus{
+		OrderID: "order_phone_status_123",
+	}
+
+	assert.Equal(t, "order_phone_status_123", req.OrderID)
+}
+
+func TestResponseGetPhoneStatus(t *testing.T) {
+	resp := &ResponseGetPhoneStatus{
+		Status: 1,
+		Phone:  "13700137000",
+	}
+
+	assert.Equal(t, 1, resp.Status)
+	assert.Equal(t, "13700137000", resp.Phone)
+}
