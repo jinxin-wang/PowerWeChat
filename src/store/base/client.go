@@ -15,7 +15,7 @@ type Client struct {
 func (comp *Client) GetStableAccessToken(ctx context.Context, data *RequestGetStableAccessToken) (*ResponseGetStableAccessToken, error) {
 	result := &ResponseGetStableAccessToken{}
 
-	params, err := object.StructToHashMap(data)
+	params, err := object.StructToStringMap(data)
 	if err != nil {
 		return nil, err
 	}
@@ -104,7 +104,7 @@ func (comp *Client) GetCallbackIP(ctx context.Context) (*ResponseGetCallbackIP, 
 func (comp *Client) GetRidInfo(ctx context.Context, data *RequestGetRidInfo) (*ResponseGetRidInfo, error) {
 	result := &ResponseGetRidInfo{}
 
-	params, err := object.StructToHashMap(data)
+	params, err := object.StructToStringMap(data)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func (comp *Client) GetRidInfo(ctx context.Context, data *RequestGetRidInfo) (*R
 func (comp *Client) GetDataByMediaID(ctx context.Context, data *RequestGetDataByMediaID) (*ResponseGetDataByMediaID, error) {
 	result := &ResponseGetDataByMediaID{}
 
-	params, err := object.StructToHashMap(data)
+	params, err := object.StructToStringMap(data)
 	if err != nil {
 		return nil, err
 	}
