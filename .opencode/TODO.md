@@ -124,3 +124,79 @@
 ### 验证
 - [x] 19. go build ./src/store/... - 编译验证
 - [x] 20. go test ./src/store/manage/... - 运行单元测试 (9个测试全部通过)
+
+---
+
+## store/order 订单管理模块开发（第一批 - 9个核心API）
+
+### 准备工作
+- [ ] 1. [src/store/order/doc.go] 包文档注释
+- [ ] 2. [src/store/order/const.go] 9个API URL常量定义
+- [ ] 3. [src/store/order/request.go] 请求结构体
+- [ ] 4. [src/store/order/response.go] 响应结构体
+
+### API 1: 获取订单列表
+- [ ] 5. [request] RequestGetOrderList - 请求参数：page_size, next_key, status, start_time, end_time
+- [ ] 6. [response] ResponseGetOrderList - 响应字段：order_list, next_key, has_more
+- [ ] 7. [client] GetOrderList 方法 - 调用 channels/ec/order/list/get
+- [ ] 8. [test] 编写单元测试
+
+### API 2: 获取订单详情
+- [ ] 9. [request] RequestGetOrder - 请求参数：order_id
+- [ ] 10. [response] ResponseGetOrder - 响应字段：order
+- [ ] 11. [client] GetOrder 方法 - 调用 channels/ec/order/get
+- [ ] 12. [test] 编写单元测试
+
+### API 3: 订单搜索
+- [ ] 13. [request] RequestSearchOrder - 请求参数：keyword, page_size, next_key
+- [ ] 14. [response] ResponseSearchOrder - 响应字段：order_list, next_key, has_more
+- [ ] 15. [client] SearchOrder 方法 - 调用 channels/ec/order/search
+- [ ] 16. [test] 编写单元测试
+
+### API 4: 修改订单价格
+- [ ] 17. [request] RequestUpdateOrderPrice - 请求参数：order_id, change_type, price, remark
+- [ ] 18. [response] ResponseUpdateOrder - 基础响应
+- [ ] 19. [client] UpdateOrderPrice 方法 - 调用 channels/ec/order/price/update
+- [ ] 20. [test] 编写单元测试
+
+### API 5: 修改订单备注
+- [ ] 21. [request] RequestUpdateOrderMerchantNote - 请求参数：order_id, note
+- [ ] 22. [response] ResponseUpdateOrder - 基础响应
+- [ ] 23. [client] UpdateOrderMerchantNote 方法 - 调用 channels/ec/order/merchantnote/update
+- [ ] 24. [test] 编写单元测试
+
+### API 6: 修改订单地址
+- [ ] 25. [request] RequestUpdateOrderAddress - 请求参数：order_id, receiver_name, detail_info等
+- [ ] 26. [response] ResponseUpdateOrder - 基础响应
+- [ ] 27. [client] UpdateOrderAddress 方法 - 调用 channels/ec/order/address/update
+- [ ] 28. [test] 编写单元测试
+
+### API 7: 修改物流信息
+- [ ] 29. [request] RequestUpdateOrderDelivery - 请求参数：order_id, delivery_id, waybill_id等
+- [ ] 30. [response] ResponseUpdateOrder - 基础响应
+- [ ] 31. [client] UpdateOrderDelivery 方法 - 调用 channels/ec/order/delivery/update
+- [ ] 32. [test] 编写单元测试
+
+### API 8: 同意/拒绝用户修改收货地址申请
+- [ ] 33. [request] RequestAcceptOrderAddressModify - 请求参数：order_id
+- [ ] 34. [response] ResponseUpdateOrder - 基础响应
+- [ ] 35. [client] AcceptOrderAddressModify 方法 - 调用 channels/ec/order/address/accept
+- [ ] 36. [test] 编写单元测试
+- [ ] 37. [request] RequestRejectOrderAddressModify - 请求参数：order_id, reason
+- [ ] 38. [response] ResponseUpdateOrder - 基础响应
+- [ ] 39. [client] RejectOrderAddressModify 方法 - 调用 channels/ec/order/address/reject
+- [ ] 40. [test] 编写单元测试
+
+### API 9: 解密订单中的详细收货信息
+- [ ] 41. [request] RequestDecodeSensitiveInfo - 请求参数：order_id, encrypted_data
+- [ ] 42. [response] ResponseDecodeSensitiveInfo - 响应字段：receiver_name, tel_number, detail_info
+- [ ] 43. [client] DecodeSensitiveInfo 方法 - 调用 channels/ec/order/sensitiveinfo/decode
+- [ ] 44. [test] 编写单元测试
+
+### Provider 注册
+- [ ] 45. [src/store/order/provider.go] IOC 注册
+- [ ] 46. [src/store/application.go] 注册 Order 到 Store 应用
+
+### 验证
+- [ ] 47. go build ./src/store/... - 编译验证
+- [ ] 48. go test ./src/store/order/... - 运行单元测试
