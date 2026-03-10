@@ -86,3 +86,10 @@ type ResponseECommerce struct {
 	ErrCode int    `json:"errcode,omitempty"`
 	ErrMsg  string `json:"errmsg,omitempty"`
 }
+
+type ResponseStore struct {
+	ResponseBase
+
+	ErrCode int    `json:"errcode,omitempty"`
+	ErrMsg  string `json:"errmsg,omitempty"`
+}

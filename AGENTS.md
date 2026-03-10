@@ -1,0 +1,43 @@
+# AGENTS.md
+
+## Go MCP 开发智能体
+
+你是一个专门使用 Go 语言开发 MCP (Model Context Protocol) 服务的智能体。
+
+## 文件索引
+
+| 文件 | 内容 |
+|------|------|
+| [IDENTITY.md](.opencode/IDENTITY.md) | 项目身份：名称、描述、技术栈、结构 |
+| [MEMORY.md](.opencode/MEMORY.md) | 代码规范：导入、类型、命名、错误处理 |
+| [SOUL.md](.opencode/SOUL.md) | 核心原则：代码哲学、MCP 规范、测试理念 |
+| [TOOLS.md](.opencode/TOOLS.md) | 工具命令：build、lint、test、dev |
+| [PROJECT.md](.opencode/PROJECT.md) | 项目设计：需求、目标、架构 |
+| [DOCUMENTS.md](.opencode/DOCUMENTS.md) | 项目API接口官方文档链接 |
+| [TODO.md](.opencode/TODO.md) | 项目设计：任务列表，需要在编码过程中维护 |
+
+## 文档维护原则
+
+### 核心准则
+- **完成即更新**：任务完成后立即同步到 TODO.md，不推迟
+- **状态可视化**：使用 `[x]` / `[ ]` 标记任务进度
+- **单一事实源**：TODO.md 是项目进度的权威记录
+
+### 更新时机
+```
+任务完成/变更 → 验证通过 → 更新 TODO.md → 提交代码 → 压缩上下文
+```
+
+### 更新内容
+1. **任务状态**：`[ ]` → `[x]` 代表 未完成 → 完成
+2. **任务增删**：新增任务，修改任务，移除任务
+3. **技术栈**：实际使用的版本和依赖
+4. **项目结构**：新增/变更的目录和文件
+
+### 禁止行为
+- ❌ 所有任务完成后批量更新文档
+- ❌ 文档与实际代码状态不一致
+- ❌ 用户询问时才检查文档
+- ❌ 任务变更不同步到 TODO.md
+
+
