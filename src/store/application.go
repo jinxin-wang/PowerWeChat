@@ -9,6 +9,7 @@ import (
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram/auth"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/manage"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/order"
 	"net/http"
 )
 
@@ -20,6 +21,7 @@ type Store struct {
 
 	Base   *base.Client
 	Manage *manage.Client
+	Order  *order.Client
 
 	Logger *logger.Logger
 }
@@ -120,6 +122,11 @@ func NewStore(config *UserConfig, extraInfos ...*kernel.ExtraInfo) (*Store, erro
 		return nil, err
 	}
 
+	app.Order, err = order.RegisterProvider(app)
+	if err != nil {
+		return nil, err
+	}
+
 	return app, err
 }
 
@@ -146,6 +153,8 @@ func (app *Store) GetComponent(name string) interface{} {
 		return app.Base
 	case "Manage":
 		return app.Manage
+	case "Order":
+		return app.Order
 	case "Logger":
 		return app.Logger
 	default:
