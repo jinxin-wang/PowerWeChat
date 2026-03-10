@@ -86,3 +86,41 @@
 - [x] 52. go build ./... - 编译验证
 - [x] 53. go vet ./... - 代码检查
 - [x] 54. go test ./src/store/... - 运行单元测试 (15个测试全部通过)
+
+---
+
+## store/manage 店铺管理模块开发
+
+### 准备工作
+- [ ] 1. [src/store/manage/doc.go] 包文档注释
+- [ ] 2. [src/store/manage/const.go] API URL 常量定义
+
+### API 1: 获取店铺基本信息
+- [ ] 3. [response] 添加 ResponseGetShopBasicInfo - 响应字段：nickname, headimg_url, subject_type, status, username
+- [ ] 4. [client] 实现 GetShopBasicInfo 方法 - 调用 channels/ec/basics/info/get
+- [ ] 5. [test] 编写单元测试
+
+### API 2: 获取店铺H5链接
+- [ ] 6. [response] 添加 ResponseGetShopH5URL - 响应字段：h5_url
+- [ ] 7. [client] 实现 GetShopH5URL 方法 - 调用 channels/ec/basics/shopurl/get
+- [ ] 8. [test] 编写单元测试
+
+### API 3: 获取店铺二维码
+- [ ] 9. [request] 添加 RequestGetShopQRCode - 请求参数：wecom_corp_id, wecom_user_id
+- [ ] 10. [response] 添加 ResponseGetShopQRCode - 响应字段：shop_qrcode
+- [ ] 11. [client] 实现 GetShopQRCode 方法 - 调用 channels/ec/basics/shop/qrcode/get
+- [ ] 12. [test] 编写单元测试
+
+### API 4: 获取店铺口令
+- [ ] 13. [request] 添加 RequestGetShopTagLink - 请求参数：wecom_corp_id, wecom_user_id
+- [ ] 14. [response] 添加 ResponseGetShopTagLink - 响应字段：tag_link
+- [ ] 15. [client] 实现 GetShopTagLink 方法 - 调用 channels/ec/basics/shoptaglink/get
+- [ ] 16. [test] 编写单元测试
+
+### Provider 注册
+- [ ] 17. [src/store/manage/provider.go] IOC 注册
+- [ ] 18. [src/store/application.go] 注册 Manage 到 Store 应用
+
+### 验证
+- [ ] 19. go build ./src/store/... - 编译验证
+- [ ] 20. go test ./src/store/manage/... - 运行单元测试
