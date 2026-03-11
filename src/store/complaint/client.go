@@ -13,6 +13,8 @@ type Client struct {
 	BaseClient *kernel.BaseClient
 }
 
+// AddComplaintMaterial 商家补充纠纷单留言
+// https://developers.weixin.qq.com/doc/store/shop/API/complaint/api_addcomplaintmaterial.html
 func (comp *Client) AddComplaintMaterial(ctx context.Context, data *request.RequestAddComplaintMaterial) (*respBase.ResponseAddComplaintMaterial, error) {
 	result := &respBase.ResponseAddComplaintMaterial{}
 
@@ -26,6 +28,8 @@ func (comp *Client) AddComplaintMaterial(ctx context.Context, data *request.Requ
 	return result, err
 }
 
+// AddComplaintProof 商家举证
+// https://developers.weixin.qq.com/doc/store/shop/API/complaint/api_addcomplaintproof.html
 func (comp *Client) AddComplaintProof(ctx context.Context, data *request.RequestAddComplaintProof) (*respBase.ResponseAddComplaintProof, error) {
 	result := &respBase.ResponseAddComplaintProof{}
 
@@ -39,6 +43,8 @@ func (comp *Client) AddComplaintProof(ctx context.Context, data *request.Request
 	return result, err
 }
 
+// GetComplaintOrder 获取纠纷单
+// https://developers.weixin.qq.com/doc/store/shop/API/complaint/api_getcomplaintorder.html
 func (comp *Client) GetComplaintOrder(ctx context.Context, data *request.RequestGetComplaintOrder) (*respBase.ResponseGetComplaintOrder, error) {
 	result := &respBase.ResponseGetComplaintOrder{}
 
