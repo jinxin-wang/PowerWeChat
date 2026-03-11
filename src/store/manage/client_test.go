@@ -3,11 +3,13 @@ package manage
 import (
 	"testing"
 
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/manage/request"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/manage/response"
 	"github.com/go-playground/assert/v2"
 )
 
 func TestRequestGetShopQRCode(t *testing.T) {
-	req := &RequestGetShopQRCode{
+	req := &request.RequestGetShopQRCode{
 		WeComCorpId: "corp123",
 		WeComUserId: "user456",
 	}
@@ -17,14 +19,14 @@ func TestRequestGetShopQRCode(t *testing.T) {
 }
 
 func TestRequestGetShopQRCode_Empty(t *testing.T) {
-	req := &RequestGetShopQRCode{}
+	req := &request.RequestGetShopQRCode{}
 
 	assert.Equal(t, "", req.WeComCorpId)
 	assert.Equal(t, "", req.WeComUserId)
 }
 
 func TestRequestGetShopTagLink(t *testing.T) {
-	req := &RequestGetShopTagLink{
+	req := &request.RequestGetShopTagLink{
 		WeComCorpId: "corp789",
 		WeComUserId: "user012",
 	}
@@ -34,15 +36,15 @@ func TestRequestGetShopTagLink(t *testing.T) {
 }
 
 func TestRequestGetShopTagLink_Empty(t *testing.T) {
-	req := &RequestGetShopTagLink{}
+	req := &request.RequestGetShopTagLink{}
 
 	assert.Equal(t, "", req.WeComCorpId)
 	assert.Equal(t, "", req.WeComUserId)
 }
 
 func TestResponseGetShopBasicInfo(t *testing.T) {
-	resp := &ResponseGetShopBasicInfo{
-		Info: ShopBasicInfo{
+	resp := &response.ResponseGetShopBasicInfo{
+		Info: response.ShopBasicInfo{
 			Nickname:    "Test Shop",
 			HeadImgUrl:  "https://example.com/logo.png",
 			SubjectType: "1",
@@ -59,7 +61,7 @@ func TestResponseGetShopBasicInfo(t *testing.T) {
 }
 
 func TestResponseGetShopH5URL(t *testing.T) {
-	resp := &ResponseGetShopH5URL{
+	resp := &response.ResponseGetShopH5URL{
 		H5URL: "https://shop.example.com",
 	}
 
@@ -67,7 +69,7 @@ func TestResponseGetShopH5URL(t *testing.T) {
 }
 
 func TestResponseGetShopQRCode(t *testing.T) {
-	resp := &ResponseGetShopQRCode{
+	resp := &response.ResponseGetShopQRCode{
 		ShopQrcode: "https://example.com/qrcode.png",
 	}
 
@@ -75,7 +77,7 @@ func TestResponseGetShopQRCode(t *testing.T) {
 }
 
 func TestResponseGetShopTagLink(t *testing.T) {
-	resp := &ResponseGetShopTagLink{
+	resp := &response.ResponseGetShopTagLink{
 		TagLink: "https://example.com/tag",
 	}
 
@@ -83,7 +85,7 @@ func TestResponseGetShopTagLink(t *testing.T) {
 }
 
 func TestShopBasicInfo(t *testing.T) {
-	info := ShopBasicInfo{
+	info := response.ShopBasicInfo{
 		Nickname:    "My Shop",
 		HeadImgUrl:  "https://cdn.example.com/logo.jpg",
 		SubjectType: "2",

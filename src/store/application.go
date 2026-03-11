@@ -7,7 +7,9 @@ import (
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/providers"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram/auth"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/aftersale"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/logistics"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/manage"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/order"
 	"net/http"
@@ -19,9 +21,11 @@ type Store struct {
 	Config      *kernel.Config
 	AccessToken *auth.AccessToken
 
-	Base   *base.Client
-	Manage *manage.Client
-	Order  *order.Client
+	Base      *base.Client
+	Manage    *manage.Client
+	Order     *order.Client
+	Aftersale *aftersale.Client
+	Logistics *logistics.Client
 
 	Logger *logger.Logger
 }
@@ -127,6 +131,16 @@ func NewStore(config *UserConfig, extraInfos ...*kernel.ExtraInfo) (*Store, erro
 		return nil, err
 	}
 
+	app.Aftersale, err = aftersale.RegisterProvider(app)
+	if err != nil {
+		return nil, err
+	}
+
+	app.Logistics, err = logistics.RegisterProvider(app)
+	if err != nil {
+		return nil, err
+	}
+
 	return app, err
 }
 
@@ -155,6 +169,10 @@ func (app *Store) GetComponent(name string) interface{} {
 		return app.Manage
 	case "Order":
 		return app.Order
+	case "Aftersale":
+		return app.Aftersale
+	case "Logistics":
+		return app.Logistics
 	case "Logger":
 		return app.Logger
 	default:

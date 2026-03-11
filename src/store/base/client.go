@@ -6,14 +6,16 @@ import (
 	"github.com/ArtisanCloud/PowerLibs/v3/object"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base/request"
+	respBase "github.com/ArtisanCloud/PowerWeChat/v3/src/store/base/response"
 )
 
 type Client struct {
 	BaseClient *kernel.BaseClient
 }
 
-func (comp *Client) GetStableAccessToken(ctx context.Context, data *RequestGetStableAccessToken) (*ResponseGetStableAccessToken, error) {
-	result := &ResponseGetStableAccessToken{}
+func (comp *Client) GetStableAccessToken(ctx context.Context, data *request.RequestGetStableAccessToken) (*respBase.ResponseGetStableAccessToken, error) {
+	result := &respBase.ResponseGetStableAccessToken{}
 
 	params, err := object.StructToStringMap(data)
 	if err != nil {
@@ -25,8 +27,8 @@ func (comp *Client) GetStableAccessToken(ctx context.Context, data *RequestGetSt
 	return result, err
 }
 
-func (comp *Client) GetAPIQuota(ctx context.Context, data *RequestGetAPIQuota) (*ResponseGetAPIQuota, error) {
-	result := &ResponseGetAPIQuota{}
+func (comp *Client) GetAPIQuota(ctx context.Context, data *request.RequestGetAPIQuota) (*respBase.ResponseGetAPIQuota, error) {
+	result := &respBase.ResponseGetAPIQuota{}
 
 	params, err := object.StructToHashMap(data)
 	if err != nil {
@@ -38,7 +40,7 @@ func (comp *Client) GetAPIQuota(ctx context.Context, data *RequestGetAPIQuota) (
 	return result, err
 }
 
-func (comp *Client) ClearAPIQuota(ctx context.Context, data *RequestClearAPIQuota) (*response.ResponseStore, error) {
+func (comp *Client) ClearAPIQuota(ctx context.Context, data *request.RequestClearAPIQuota) (*response.ResponseStore, error) {
 	result := &response.ResponseStore{}
 
 	params, err := object.StructToHashMap(data)
@@ -59,7 +61,7 @@ func (comp *Client) ClearQuota(ctx context.Context) (*response.ResponseStore, er
 	return result, err
 }
 
-func (comp *Client) ClearQuotaByAppSecret(ctx context.Context, data *RequestClearQuotaByAppSecret) (*response.ResponseStore, error) {
+func (comp *Client) ClearQuotaByAppSecret(ctx context.Context, data *request.RequestClearQuotaByAppSecret) (*response.ResponseStore, error) {
 	result := &response.ResponseStore{}
 
 	params, err := object.StructToHashMap(data)
@@ -72,8 +74,8 @@ func (comp *Client) ClearQuotaByAppSecret(ctx context.Context, data *RequestClea
 	return result, err
 }
 
-func (comp *Client) CallbackCheck(ctx context.Context, data *RequestCallbackCheck) (*ResponseCallbackCheck, error) {
-	result := &ResponseCallbackCheck{}
+func (comp *Client) CallbackCheck(ctx context.Context, data *request.RequestCallbackCheck) (*respBase.ResponseCallbackCheck, error) {
+	result := &respBase.ResponseCallbackCheck{}
 
 	params, err := object.StructToHashMap(data)
 	if err != nil {
@@ -85,24 +87,24 @@ func (comp *Client) CallbackCheck(ctx context.Context, data *RequestCallbackChec
 	return result, err
 }
 
-func (comp *Client) GetAPIDomainIP(ctx context.Context) (*ResponseGetAPIDomainIP, error) {
-	result := &ResponseGetAPIDomainIP{}
+func (comp *Client) GetAPIDomainIP(ctx context.Context) (*respBase.ResponseGetAPIDomainIP, error) {
+	result := &respBase.ResponseGetAPIDomainIP{}
 
 	_, err := comp.BaseClient.HttpGet(ctx, APIGetAPIDomainIP, nil, nil, result)
 
 	return result, err
 }
 
-func (comp *Client) GetCallbackIP(ctx context.Context) (*ResponseGetCallbackIP, error) {
-	result := &ResponseGetCallbackIP{}
+func (comp *Client) GetCallbackIP(ctx context.Context) (*respBase.ResponseGetCallbackIP, error) {
+	result := &respBase.ResponseGetCallbackIP{}
 
 	_, err := comp.BaseClient.HttpGet(ctx, APIGetCallbackIP, nil, nil, result)
 
 	return result, err
 }
 
-func (comp *Client) GetRidInfo(ctx context.Context, data *RequestGetRidInfo) (*ResponseGetRidInfo, error) {
-	result := &ResponseGetRidInfo{}
+func (comp *Client) GetRidInfo(ctx context.Context, data *request.RequestGetRidInfo) (*respBase.ResponseGetRidInfo, error) {
+	result := &respBase.ResponseGetRidInfo{}
 
 	params, err := object.StructToStringMap(data)
 	if err != nil {
@@ -114,8 +116,8 @@ func (comp *Client) GetRidInfo(ctx context.Context, data *RequestGetRidInfo) (*R
 	return result, err
 }
 
-func (comp *Client) GetDataByMediaID(ctx context.Context, data *RequestGetDataByMediaID) (*ResponseGetDataByMediaID, error) {
-	result := &ResponseGetDataByMediaID{}
+func (comp *Client) GetDataByMediaID(ctx context.Context, data *request.RequestGetDataByMediaID) (*respBase.ResponseGetDataByMediaID, error) {
+	result := &respBase.ResponseGetDataByMediaID{}
 
 	params, err := object.StructToStringMap(data)
 	if err != nil {

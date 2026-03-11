@@ -3,11 +3,13 @@ package order
 import (
 	"testing"
 
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/order/request"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/order/response"
 	"github.com/go-playground/assert/v2"
 )
 
 func TestRequestGetOrderList(t *testing.T) {
-	req := &RequestGetOrderList{
+	req := &request.RequestGetOrderList{
 		PageSize:  10,
 		NextKey:   "key123",
 		Status:    1,
@@ -23,7 +25,7 @@ func TestRequestGetOrderList(t *testing.T) {
 }
 
 func TestRequestGetOrder(t *testing.T) {
-	req := &RequestGetOrder{
+	req := &request.RequestGetOrder{
 		OrderID: "order_123456",
 	}
 
@@ -31,7 +33,7 @@ func TestRequestGetOrder(t *testing.T) {
 }
 
 func TestRequestSearchOrder(t *testing.T) {
-	req := &RequestSearchOrder{
+	req := &request.RequestSearchOrder{
 		Keyword:  "测试",
 		PageSize: 20,
 		NextKey:  "next_key",
@@ -43,7 +45,7 @@ func TestRequestSearchOrder(t *testing.T) {
 }
 
 func TestRequestUpdateOrderPrice(t *testing.T) {
-	req := &RequestUpdateOrderPrice{
+	req := &request.RequestUpdateOrderPrice{
 		OrderID:    "order_123",
 		ChangeType: 1,
 		Price:      999,
@@ -57,7 +59,7 @@ func TestRequestUpdateOrderPrice(t *testing.T) {
 }
 
 func TestRequestUpdateOrderMerchantNote(t *testing.T) {
-	req := &RequestUpdateOrderMerchantNote{
+	req := &request.RequestUpdateOrderMerchantNote{
 		OrderID: "order_456",
 		Note:    "重要客户",
 	}
@@ -67,7 +69,7 @@ func TestRequestUpdateOrderMerchantNote(t *testing.T) {
 }
 
 func TestRequestUpdateOrderAddress(t *testing.T) {
-	req := &RequestUpdateOrderAddress{
+	req := &request.RequestUpdateOrderAddress{
 		OrderID:      "order_789",
 		ReceiverName: "张三",
 		DetailInfo:   "某某小区1号楼",
@@ -84,7 +86,7 @@ func TestRequestUpdateOrderAddress(t *testing.T) {
 }
 
 func TestRequestUpdateOrderDelivery(t *testing.T) {
-	req := &RequestUpdateOrderDelivery{
+	req := &request.RequestUpdateOrderDelivery{
 		OrderID:        "order_001",
 		DeliveryID:     "SF",
 		WaybillID:      "SF123456789",
@@ -98,7 +100,7 @@ func TestRequestUpdateOrderDelivery(t *testing.T) {
 }
 
 func TestRequestAcceptOrderAddressModify(t *testing.T) {
-	req := &RequestAcceptOrderAddressModify{
+	req := &request.RequestAcceptOrderAddressModify{
 		OrderID: "order_modify_1",
 	}
 
@@ -106,7 +108,7 @@ func TestRequestAcceptOrderAddressModify(t *testing.T) {
 }
 
 func TestRequestRejectOrderAddressModify(t *testing.T) {
-	req := &RequestRejectOrderAddressModify{
+	req := &request.RequestRejectOrderAddressModify{
 		OrderID: "order_modify_2",
 		Reason:  "地址不详细",
 	}
@@ -116,7 +118,7 @@ func TestRequestRejectOrderAddressModify(t *testing.T) {
 }
 
 func TestRequestDecodeSensitiveInfo(t *testing.T) {
-	req := &RequestDecodeSensitiveInfo{
+	req := &request.RequestDecodeSensitiveInfo{
 		OrderID:       "order_secret",
 		EncryptedData: "encrypted_data_here",
 	}
@@ -126,8 +128,8 @@ func TestRequestDecodeSensitiveInfo(t *testing.T) {
 }
 
 func TestResponseGetOrderList(t *testing.T) {
-	resp := &ResponseGetOrderList{
-		OrderList: []OrderInfo{
+	resp := &response.ResponseGetOrderList{
+		OrderList: []response.OrderInfo{
 			{OrderID: "order_1"},
 			{OrderID: "order_2"},
 		},
@@ -142,8 +144,8 @@ func TestResponseGetOrderList(t *testing.T) {
 }
 
 func TestResponseGetOrder(t *testing.T) {
-	resp := &ResponseGetOrder{
-		Order: OrderInfo{
+	resp := &response.ResponseGetOrder{
+		Order: response.OrderInfo{
 			OrderID: "order_detail",
 			Status:  1,
 		},
@@ -154,8 +156,8 @@ func TestResponseGetOrder(t *testing.T) {
 }
 
 func TestResponseSearchOrder(t *testing.T) {
-	resp := &ResponseSearchOrder{
-		OrderList: []OrderInfo{},
+	resp := &response.ResponseSearchOrder{
+		OrderList: []response.OrderInfo{},
 		HasMore:   false,
 	}
 
@@ -164,7 +166,7 @@ func TestResponseSearchOrder(t *testing.T) {
 }
 
 func TestOrderInfo(t *testing.T) {
-	info := OrderInfo{
+	info := response.OrderInfo{
 		OrderID:    "test_order",
 		Status:     2,
 		CreateTime: "2024-01-01 10:00:00",
@@ -177,7 +179,7 @@ func TestOrderInfo(t *testing.T) {
 }
 
 func TestProductInfo(t *testing.T) {
-	info := ProductInfo{
+	info := response.ProductInfo{
 		ProductID:  "prod_1",
 		SkuID:      "sku_1",
 		Title:      "测试商品",
@@ -191,7 +193,7 @@ func TestProductInfo(t *testing.T) {
 }
 
 func TestAddressInfo(t *testing.T) {
-	info := AddressInfo{
+	info := response.AddressInfo{
 		UserName:     "李四",
 		TelNumber:    "13900139000",
 		ProvinceName: "广东省",
@@ -204,7 +206,7 @@ func TestAddressInfo(t *testing.T) {
 }
 
 func TestResponseDecodeSensitiveInfo(t *testing.T) {
-	resp := &ResponseDecodeSensitiveInfo{
+	resp := &response.ResponseDecodeSensitiveInfo{
 		ReceiverName: "王五",
 		TelNumber:    "13700137000",
 		DetailInfo:   "详细地址",
@@ -215,10 +217,8 @@ func TestResponseDecodeSensitiveInfo(t *testing.T) {
 	assert.Equal(t, "详细地址", resp.DetailInfo)
 }
 
-// Batch 2 API Tests
-
 func TestRequestUploadFreshInsurance(t *testing.T) {
-	req := &RequestUploadFreshInsurance{
+	req := &request.RequestUploadFreshInsurance{
 		OrderID:       "order_fresh_123",
 		InsuranceInfo: "质检通过",
 	}
@@ -228,7 +228,7 @@ func TestRequestUploadFreshInsurance(t *testing.T) {
 }
 
 func TestRequestAddGiftOrderNote(t *testing.T) {
-	req := &RequestAddGiftOrderNote{
+	req := &request.RequestAddGiftOrderNote{
 		OrderID: "order_gift_123",
 		Note:    "礼品订单备注",
 	}
@@ -238,7 +238,7 @@ func TestRequestAddGiftOrderNote(t *testing.T) {
 }
 
 func TestRequestGetGiftOrderSubList(t *testing.T) {
-	req := &RequestGetGiftOrderSubList{
+	req := &request.RequestGetGiftOrderSubList{
 		OrderID:  "order_gift_456",
 		PageSize: 20,
 		NextKey:  "next_key",
@@ -250,8 +250,8 @@ func TestRequestGetGiftOrderSubList(t *testing.T) {
 }
 
 func TestResponseGetGiftOrderSubList(t *testing.T) {
-	resp := &ResponseGetGiftOrderSubList{
-		SubOrderList: []SubOrderInfo{
+	resp := &response.ResponseGetGiftOrderSubList{
+		SubOrderList: []response.SubOrderInfo{
 			{SubOrderID: "sub_1"},
 			{SubOrderID: "sub_2"},
 		},
@@ -265,7 +265,7 @@ func TestResponseGetGiftOrderSubList(t *testing.T) {
 }
 
 func TestRequestGetSKUChangeList(t *testing.T) {
-	req := &RequestGetSKUChangeList{
+	req := &request.RequestGetSKUChangeList{
 		OrderID:  "order_sku_123",
 		PageSize: 10,
 		NextKey:  "key",
@@ -276,8 +276,8 @@ func TestRequestGetSKUChangeList(t *testing.T) {
 }
 
 func TestResponseGetSKUChangeList(t *testing.T) {
-	resp := &ResponseGetSKUChangeList{
-		SKUChangeList: []SKUChangeInfo{
+	resp := &response.ResponseGetSKUChangeList{
+		SKUChangeList: []response.SKUChangeInfo{
 			{
 				SKUChangeID: "change_1",
 				OrderID:     "order_1",
@@ -292,7 +292,7 @@ func TestResponseGetSKUChangeList(t *testing.T) {
 }
 
 func TestRequestAcceptSKUChange(t *testing.T) {
-	req := &RequestAcceptSKUChange{
+	req := &request.RequestAcceptSKUChange{
 		OrderID:     "order_123",
 		SKUChangeID: "change_123",
 	}
@@ -302,7 +302,7 @@ func TestRequestAcceptSKUChange(t *testing.T) {
 }
 
 func TestRequestRejectSKUChange(t *testing.T) {
-	req := &RequestRejectSKUChange{
+	req := &request.RequestRejectSKUChange{
 		OrderID:     "order_456",
 		SKUChangeID: "change_456",
 		Reason:      "库存不足",
@@ -313,7 +313,7 @@ func TestRequestRejectSKUChange(t *testing.T) {
 }
 
 func TestRequestApplyRealNumber(t *testing.T) {
-	req := &RequestApplyRealNumber{
+	req := &request.RequestApplyRealNumber{
 		OrderID: "order_real_123",
 		Reason:  "售后需要",
 	}
@@ -323,7 +323,7 @@ func TestRequestApplyRealNumber(t *testing.T) {
 }
 
 func TestResponseApplyRealNumber(t *testing.T) {
-	resp := &ResponseApplyRealNumber{
+	resp := &response.ResponseApplyRealNumber{
 		ApplyID: "apply_123",
 	}
 
@@ -331,7 +331,7 @@ func TestResponseApplyRealNumber(t *testing.T) {
 }
 
 func TestRequestGetRealNumberStatus(t *testing.T) {
-	req := &RequestGetRealNumberStatus{
+	req := &request.RequestGetRealNumberStatus{
 		ApplyID: "apply_456",
 	}
 
@@ -339,7 +339,7 @@ func TestRequestGetRealNumberStatus(t *testing.T) {
 }
 
 func TestResponseGetRealNumberStatus(t *testing.T) {
-	resp := &ResponseGetRealNumberStatus{
+	resp := &response.ResponseGetRealNumberStatus{
 		Status:      1,
 		PhoneNumber: "13800138000",
 		AuditResult: "通过",
@@ -350,7 +350,7 @@ func TestResponseGetRealNumberStatus(t *testing.T) {
 }
 
 func TestRequestReapplyVirtualNumber(t *testing.T) {
-	req := &RequestReapplyVirtualNumber{
+	req := &request.RequestReapplyVirtualNumber{
 		OrderID: "order_virtual_123",
 	}
 
@@ -358,7 +358,7 @@ func TestRequestReapplyVirtualNumber(t *testing.T) {
 }
 
 func TestRequestDelayVirtualNumber(t *testing.T) {
-	req := &RequestDelayVirtualNumber{
+	req := &request.RequestDelayVirtualNumber{
 		OrderID:   "order_virtual_456",
 		DelayDays: 7,
 	}
@@ -368,7 +368,7 @@ func TestRequestDelayVirtualNumber(t *testing.T) {
 }
 
 func TestRequestAddPhoneVerifyCode(t *testing.T) {
-	req := &RequestAddPhoneVerifyCode{
+	req := &request.RequestAddPhoneVerifyCode{
 		OrderID: "order_phone_123",
 		Phone:   "13900139000",
 	}
@@ -378,7 +378,7 @@ func TestRequestAddPhoneVerifyCode(t *testing.T) {
 }
 
 func TestRequestSendPhoneVerifyCode(t *testing.T) {
-	req := &RequestSendPhoneVerifyCode{
+	req := &request.RequestSendPhoneVerifyCode{
 		OrderID: "order_phone_456",
 	}
 
@@ -386,7 +386,7 @@ func TestRequestSendPhoneVerifyCode(t *testing.T) {
 }
 
 func TestRequestGetPhoneStatus(t *testing.T) {
-	req := &RequestGetPhoneStatus{
+	req := &request.RequestGetPhoneStatus{
 		OrderID: "order_phone_status_123",
 	}
 
@@ -394,7 +394,7 @@ func TestRequestGetPhoneStatus(t *testing.T) {
 }
 
 func TestResponseGetPhoneStatus(t *testing.T) {
-	resp := &ResponseGetPhoneStatus{
+	resp := &response.ResponseGetPhoneStatus{
 		Status: 1,
 		Phone:  "13700137000",
 	}

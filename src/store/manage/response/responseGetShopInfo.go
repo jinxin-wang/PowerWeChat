@@ -1,8 +1,7 @@
-package manage
+package response
 
 import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
 
-// ShopBasicInfo 店铺基本信息
 type ShopBasicInfo struct {
 	Nickname    string `json:"nickname"`
 	HeadImgUrl  string `json:"headimg_url"`

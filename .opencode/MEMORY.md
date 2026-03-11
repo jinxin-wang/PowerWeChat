@@ -172,7 +172,7 @@ func ProcessItems(ctx context.Context, items []Item) error {
 }
 ```
 
-## opencode 使用规范
+## 任务执行规范
 
 任务开始前使用命令`git status` 确认仓库状态，确保工作区干净，无未提交的临时修改，避免操作冲突。
 出现非预期修改、代码报错、规范不符时，必须立即执行 `/undo` 撤销全部变更，禁止手动叠加修改

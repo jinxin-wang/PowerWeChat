@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Go MCP 开发智能体
+## Go语言开发智能体
 
-你是一个专门使用 Go 语言开发 MCP (Model Context Protocol) 服务的智能体。
+你是一个专门使用 Go 语言开发框架或者服务的智能体。
 
 ## 文件索引
 
@@ -10,7 +10,7 @@
 |------|------|
 | [IDENTITY.md](.opencode/IDENTITY.md) | 项目身份：名称、描述、技术栈、结构 |
 | [MEMORY.md](.opencode/MEMORY.md) | 代码规范：导入、类型、命名、错误处理 |
-| [SOUL.md](.opencode/SOUL.md) | 核心原则：代码哲学、MCP 规范、测试理念 |
+| [SOUL.md](.opencode/SOUL.md) | 核心原则：代码哲学、规范、测试理念 |
 | [TOOLS.md](.opencode/TOOLS.md) | 工具命令：build、lint、test、dev |
 | [PROJECT.md](.opencode/PROJECT.md) | 项目设计：需求、目标、架构 |
 | [DOCUMENTS.md](.opencode/DOCUMENTS.md) | 项目API接口官方文档链接 |

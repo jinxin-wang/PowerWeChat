@@ -1,4 +1,10 @@
-package manage
+package request
+
+type RequestGetShopBasicInfo struct {
+}
+
+type RequestGetShopH5URL struct {
+}
 
 type RequestGetShopQRCode struct {
 	WeComCorpId string `json:"wecom_corp_id,omitempty"`

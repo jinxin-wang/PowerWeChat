@@ -3,11 +3,13 @@ package base
 import (
 	"testing"
 
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base/request"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base/response"
 	"github.com/go-playground/assert/v2"
 )
 
 func TestRequestGetStableAccessToken(t *testing.T) {
-	req := &RequestGetStableAccessToken{
+	req := &request.RequestGetStableAccessToken{
 		GrantType: "client_credential",
 		AppID:     "test_appid",
 		Secret:    "test_secret",
@@ -19,7 +21,7 @@ func TestRequestGetStableAccessToken(t *testing.T) {
 }
 
 func TestRequestGetAPIQuota(t *testing.T) {
-	req := &RequestGetAPIQuota{
+	req := &request.RequestGetAPIQuota{
 		CgiPath: "/wxa/getunlimited",
 	}
 
@@ -27,13 +29,13 @@ func TestRequestGetAPIQuota(t *testing.T) {
 }
 
 func TestRequestGetAPIQuota_Empty(t *testing.T) {
-	req := &RequestGetAPIQuota{}
+	req := &request.RequestGetAPIQuota{}
 
 	assert.Equal(t, "", req.CgiPath)
 }
 
 func TestRequestClearAPIQuota(t *testing.T) {
-	req := &RequestClearAPIQuota{
+	req := &request.RequestClearAPIQuota{
 		CgiPath: "/wxa/getunlimited",
 	}
 
@@ -41,7 +43,7 @@ func TestRequestClearAPIQuota(t *testing.T) {
 }
 
 func TestRequestClearQuotaByAppSecret(t *testing.T) {
-	req := &RequestClearQuotaByAppSecret{
+	req := &request.RequestClearQuotaByAppSecret{
 		Secret: "test_secret",
 	}
 
@@ -49,7 +51,7 @@ func TestRequestClearQuotaByAppSecret(t *testing.T) {
 }
 
 func TestRequestCallbackCheck(t *testing.T) {
-	req := &RequestCallbackCheck{
+	req := &request.RequestCallbackCheck{
 		Action:   "callback",
 		Operator: "DEFAULT",
 	}
@@ -59,7 +61,7 @@ func TestRequestCallbackCheck(t *testing.T) {
 }
 
 func TestRequestGetRidInfo(t *testing.T) {
-	req := &RequestGetRidInfo{
+	req := &request.RequestGetRidInfo{
 		Rid: "test_rid_123456",
 	}
 
@@ -67,7 +69,7 @@ func TestRequestGetRidInfo(t *testing.T) {
 }
 
 func TestRequestGetDataByMediaID(t *testing.T) {
-	req := &RequestGetDataByMediaID{
+	req := &request.RequestGetDataByMediaID{
 		MediaID: "test_media_id",
 	}
 
@@ -75,7 +77,7 @@ func TestRequestGetDataByMediaID(t *testing.T) {
 }
 
 func TestResponseGetStableAccessToken(t *testing.T) {
-	resp := &ResponseGetStableAccessToken{
+	resp := &response.ResponseGetStableAccessToken{
 		AccessToken: "test_access_token",
 		ExpiresIn:   7200,
 	}
@@ -85,7 +87,7 @@ func TestResponseGetStableAccessToken(t *testing.T) {
 }
 
 func TestResponseGetAPIQuota(t *testing.T) {
-	resp := &ResponseGetAPIQuota{
+	resp := &response.ResponseGetAPIQuota{
 		Quota:      "1000",
 		QuotaLimit: "2000",
 	}
@@ -95,7 +97,7 @@ func TestResponseGetAPIQuota(t *testing.T) {
 }
 
 func TestResponseCallbackCheck(t *testing.T) {
-	resp := &ResponseCallbackCheck{
+	resp := &response.ResponseCallbackCheck{
 		Operator: "DEFAULT",
 		Result:   "OK",
 	}
@@ -105,7 +107,7 @@ func TestResponseCallbackCheck(t *testing.T) {
 }
 
 func TestResponseGetAPIDomainIP(t *testing.T) {
-	resp := &ResponseGetAPIDomainIP{
+	resp := &response.ResponseGetAPIDomainIP{
 		IPList: []string{"127.0.0.1", "127.0.0.2"},
 	}
 
@@ -114,7 +116,7 @@ func TestResponseGetAPIDomainIP(t *testing.T) {
 }
 
 func TestResponseGetCallbackIP(t *testing.T) {
-	resp := &ResponseGetCallbackIP{
+	resp := &response.ResponseGetCallbackIP{
 		IPList: []string{"127.0.0.1", "127.0.0.2", "127.0.0.3"},
 	}
 
@@ -122,7 +124,7 @@ func TestResponseGetCallbackIP(t *testing.T) {
 }
 
 func TestResponseGetRidInfo(t *testing.T) {
-	resp := &ResponseGetRidInfo{
+	resp := &response.ResponseGetRidInfo{
 		RequestInfo: "test_request_info",
 		RequestMsg:  "test_request_msg",
 	}
@@ -132,7 +134,7 @@ func TestResponseGetRidInfo(t *testing.T) {
 }
 
 func TestResponseGetDataByMediaID(t *testing.T) {
-	resp := &ResponseGetDataByMediaID{
+	resp := &response.ResponseGetDataByMediaID{
 		Data: "test_data_content",
 	}
 
