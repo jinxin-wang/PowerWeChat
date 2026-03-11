@@ -15,5 +15,5 @@
 | [ ] | [TODO_KF_COMPLAINT.md](.opencode/TODO_KF_COMPLAINT.md) | kf + complaint | 客服与纠纷管理模块 - 客服上传多媒体、纠纷列表/详情/调解等 | 5个 |
 | [ ] | [TODO_LEAGUE.md](.opencode/TODO_LEAGUE.md) | league | 优选联盟模块 - 达人操作(5个) + 商品操作(6个) | 11个 |
 | [x] | [TODO_LOGISTICS.md](.opencode/TODO_LOGISTICS.md) | logistics | 物流发货模块 - 地址管理(5) + 运费模板(4) + 电子面单(15) + 发货(4) + 虚拟号码(3) | 31个 |
-| [ ] | [TODO_VIP.md](.opencode/TODO_VIP.md) | vip | 小店会员模块 - 用户积分、用户信息、用户列表、积分明细等 | 4个 |
+| [x] | [TODO_VIP.md](.opencode/TODO_VIP.md) | vip | 小店会员模块 - 用户积分、用户信息、用户列表、积分明细等 | 4个 |
 
