@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseGetAddress 获取地址详情响应
 type ResponseGetAddress struct {

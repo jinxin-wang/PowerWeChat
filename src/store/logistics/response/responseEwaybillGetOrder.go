@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseEwaybillGetOrder 查询面单详情响应
 type ResponseEwaybillGetOrder struct {

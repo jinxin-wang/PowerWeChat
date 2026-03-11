@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseGetPrivateNumberPool 获取虚拟号码池响应
 type ResponseGetPrivateNumberPool struct {

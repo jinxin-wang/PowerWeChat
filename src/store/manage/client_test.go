@@ -3,8 +3,8 @@ package manage
 import (
 	"testing"
 
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/manage/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/manage/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/manage/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/manage/response"
 	"github.com/go-playground/assert/v2"
 )
 

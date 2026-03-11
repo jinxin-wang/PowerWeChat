@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseEwaybillGetDeliveryList 查询开通的快递公司列表响应
 type ResponseEwaybillGetDeliveryList struct {

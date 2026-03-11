@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseGetFreightTemplateDetail 查询运费模版详情响应
 type ResponseGetFreightTemplateDetail struct {

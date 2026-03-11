@@ -3,8 +3,8 @@ package aftersale
 import (
 	"testing"
 
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/aftersale/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/aftersale/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/aftersale/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/aftersale/response"
 	"github.com/go-playground/assert/v2"
 )
 

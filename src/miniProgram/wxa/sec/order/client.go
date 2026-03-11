@@ -3,9 +3,9 @@ package wxaSecOrder
 import (
 	"context"
 
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram/wxa/sec/order/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram/wxa/sec/order/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/miniProgram/wxa/sec/order/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/miniProgram/wxa/sec/order/response"
 )
 
 type Client struct {

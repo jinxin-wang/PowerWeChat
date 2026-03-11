@@ -3,8 +3,8 @@ package order
 import (
 	"testing"
 
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/order/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/order/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/order/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/order/response"
 	"github.com/go-playground/assert/v2"
 )
 

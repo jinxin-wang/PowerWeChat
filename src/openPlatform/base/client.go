@@ -3,9 +3,9 @@ package base
 import (
 	"context"
 	"github.com/ArtisanCloud/PowerLibs/v3/object"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
-	response2 "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/base/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
+	response2 "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/base/response"
 )
 
 type Client struct {

@@ -5,10 +5,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/ArtisanCloud/PowerLibs/v3/object"
-	response2 "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
-	payment "github.com/ArtisanCloud/PowerWeChat/v3/src/payment/kernel"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/payment/partner/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/payment/partner/response"
+	response2 "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
+	payment "github.com/jinxin-wang/PowerWeChat/v3/src/payment/kernel"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/payment/partner/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/payment/partner/response"
 
 	"net/http"
 )

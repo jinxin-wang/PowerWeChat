@@ -1,7 +1,7 @@
 package support
 
 import (
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/power"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/power"
 	"github.com/go-playground/assert/v2"
 	"testing"
 )

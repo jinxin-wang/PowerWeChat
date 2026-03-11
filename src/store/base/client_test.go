@@ -3,8 +3,8 @@ package base
 import (
 	"testing"
 
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/base/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/base/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/base/response"
 	"github.com/go-playground/assert/v2"
 )
 

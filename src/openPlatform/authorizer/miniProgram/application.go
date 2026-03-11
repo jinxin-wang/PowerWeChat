@@ -1,17 +1,17 @@
 package miniProgram
 
 import (
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/providers"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount/material"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/account"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/auth"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/code"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/domain"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/privacy"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/setting"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/tester"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/providers"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/miniProgram"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/officialAccount/material"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/account"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/auth"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/code"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/domain"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/privacy"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/setting"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openPlatform/authorizer/miniProgram/tester"
 )
 
 type Application struct {

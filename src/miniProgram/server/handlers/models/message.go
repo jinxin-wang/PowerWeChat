@@ -2,8 +2,8 @@ package models
 
 import (
 	"encoding/xml"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/contract"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/models"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/contract"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/models"
 )
 
 type MsgAgentID struct {

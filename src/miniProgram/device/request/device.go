@@ -1,6 +1,6 @@
 package request
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram/device/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/miniProgram/device/response"
 
 type Data map[string]struct {
 	Value string `json:"value"`

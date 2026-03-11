@@ -1,8 +1,8 @@
 package customerService
 
 import (
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount/customerService/session"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/officialAccount/customerService/session"
 )
 
 func RegisterProvider(app kernel.ApplicationInterface) (*Client, *session.Client, error) {

@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseEwaybillGetTemplateConfig 获取面单标准模板配置响应
 type ResponseEwaybillGetTemplateConfig struct {

@@ -2,10 +2,10 @@ package wedrive
 
 import (
 	"context"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
-	response2 "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/work/oa/wedrive/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/work/oa/wedrive/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
+	response2 "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/work/oa/wedrive/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/work/oa/wedrive/response"
 )
 
 type Client struct {

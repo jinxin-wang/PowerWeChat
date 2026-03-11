@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/ArtisanCloud/PowerLibs/v3/cache"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
 )
 
 type SuiteTicket struct {

@@ -1,9 +1,9 @@
 package support
 
 import (
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/contract"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/decorators"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/messages"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/contract"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/decorators"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/messages"
 	"net/http"
 	"reflect"
 )

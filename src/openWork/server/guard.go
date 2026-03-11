@@ -9,12 +9,12 @@ import (
 	"net/http"
 
 	"github.com/ArtisanCloud/PowerLibs/v3/object"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/contract"
-	kernelModels "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/models"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openWork/server/handlers"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/openWork/server/models"
-	workModels "github.com/ArtisanCloud/PowerWeChat/v3/src/work/server/handlers/models"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/contract"
+	kernelModels "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/models"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openWork/server/handlers"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/openWork/server/models"
+	workModels "github.com/jinxin-wang/PowerWeChat/v3/src/work/server/handlers/models"
 )
 
 const (

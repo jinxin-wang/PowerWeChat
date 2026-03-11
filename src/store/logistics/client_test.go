@@ -3,8 +3,8 @@ package logistics
 import (
 	"testing"
 
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/logistics/request"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/store/logistics/response"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/logistics/request"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/logistics/response"
 	"github.com/stretchr/testify/assert"
 )
 

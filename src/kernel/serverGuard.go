@@ -16,10 +16,10 @@ import (
 
 	logger2 "github.com/ArtisanCloud/PowerLibs/v3/logger"
 	"github.com/ArtisanCloud/PowerLibs/v3/object"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/contract"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/messages"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/models"
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/support"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/contract"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/messages"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/models"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel/support"
 )
 
 const SUCCESS_EMPTY_RESPONSE = "success"

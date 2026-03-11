@@ -1,6 +1,6 @@
 package response
 
-import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/response"
+import "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 
 // ResponseGetDeliveryCompanyListNew 获取快递公司列表响应（新）
 type ResponseGetDeliveryCompanyListNew struct {
