@@ -13,6 +13,8 @@ type Client struct {
 	BaseClient *kernel.BaseClient
 }
 
+// GetAftersaleList 获取售后单列表
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_getaftersalelist.html
 func (comp *Client) GetAftersaleList(ctx context.Context, data *request.RequestGetAftersaleList) (*response.ResponseGetAftersaleList, error) {
 	result := &response.ResponseGetAftersaleList{}
 
@@ -26,6 +28,8 @@ func (comp *Client) GetAftersaleList(ctx context.Context, data *request.RequestG
 	return result, err
 }
 
+// GetAftersaleOrder 获取售后单详情
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_getaftersaleorder.html
 func (comp *Client) GetAftersaleOrder(ctx context.Context, data *request.RequestGetAftersaleOrder) (*response.ResponseGetAftersaleOrder, error) {
 	result := &response.ResponseGetAftersaleOrder{}
 
@@ -39,6 +43,8 @@ func (comp *Client) GetAftersaleOrder(ctx context.Context, data *request.Request
 	return result, err
 }
 
+// AcceptApply 同意售后
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_acceptapply.html
 func (comp *Client) AcceptApply(ctx context.Context, data *request.RequestAcceptApply) (*response.ResponseAcceptApply, error) {
 	result := &response.ResponseAcceptApply{}
 
@@ -52,6 +58,8 @@ func (comp *Client) AcceptApply(ctx context.Context, data *request.RequestAccept
 	return result, err
 }
 
+// AcceptExchangeReship 换货发货
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_acceptexchangereship.html
 func (comp *Client) AcceptExchangeReship(ctx context.Context, data *request.RequestAcceptExchangeReship) (*response.ResponseAcceptExchangeReship, error) {
 	result := &response.ResponseAcceptExchangeReship{}
 
@@ -65,6 +73,8 @@ func (comp *Client) AcceptExchangeReship(ctx context.Context, data *request.Requ
 	return result, err
 }
 
+// GenAftersaleOrder 代用户发起售后
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_genaftersaleorder.html
 func (comp *Client) GenAftersaleOrder(ctx context.Context, data *request.RequestGenAftersaleOrder) (*response.ResponseGenAftersaleOrder, error) {
 	result := &response.ResponseGenAftersaleOrder{}
 
@@ -78,6 +88,8 @@ func (comp *Client) GenAftersaleOrder(ctx context.Context, data *request.Request
 	return result, err
 }
 
+// SearchGuaranteeOrder 商家获取保障单列表
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_searchguaranteeorder.html
 func (comp *Client) SearchGuaranteeOrder(ctx context.Context, data *request.RequestSearchGuaranteeOrder) (*response.ResponseSearchGuaranteeOrder, error) {
 	result := &response.ResponseSearchGuaranteeOrder{}
 
@@ -91,6 +103,8 @@ func (comp *Client) SearchGuaranteeOrder(ctx context.Context, data *request.Requ
 	return result, err
 }
 
+// GetGuaranteeOrder 获取保障单详情
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_getguaranteeorder.html
 func (comp *Client) GetGuaranteeOrder(ctx context.Context, data *request.RequestGetGuaranteeOrder) (*response.ResponseGetGuaranteeOrder, error) {
 	result := &response.ResponseGetGuaranteeOrder{}
 
@@ -104,6 +118,8 @@ func (comp *Client) GetGuaranteeOrder(ctx context.Context, data *request.Request
 	return result, err
 }
 
+// MerchantAcceptGuarantee 商家同意保障单申请
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_merchantacceptguarantee.html
 func (comp *Client) MerchantAcceptGuarantee(ctx context.Context, data *request.RequestMerchantAcceptGuarantee) (*response.ResponseMerchantAcceptGuarantee, error) {
 	result := &response.ResponseMerchantAcceptGuarantee{}
 
@@ -117,6 +133,8 @@ func (comp *Client) MerchantAcceptGuarantee(ctx context.Context, data *request.R
 	return result, err
 }
 
+// MerchantModifyGuarantee 商家协商保障单
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_merchantmodifyguarantee.html
 func (comp *Client) MerchantModifyGuarantee(ctx context.Context, data *request.RequestMerchantModifyGuarantee) (*response.ResponseMerchantModifyGuarantee, error) {
 	result := &response.ResponseMerchantModifyGuarantee{}
 
@@ -130,6 +148,8 @@ func (comp *Client) MerchantModifyGuarantee(ctx context.Context, data *request.R
 	return result, err
 }
 
+// MerchantProofGuarantee 商家举证保障单
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_merchantproofguarantee.html
 func (comp *Client) MerchantProofGuarantee(ctx context.Context, data *request.RequestMerchantProofGuarantee) (*response.ResponseMerchantProofGuarantee, error) {
 	result := &response.ResponseMerchantProofGuarantee{}
 
@@ -143,6 +163,8 @@ func (comp *Client) MerchantProofGuarantee(ctx context.Context, data *request.Re
 	return result, err
 }
 
+// MerchantRefuseGuarantee 商家拒绝保障单申请
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_merchantrefuseguarantee.html
 func (comp *Client) MerchantRefuseGuarantee(ctx context.Context, data *request.RequestMerchantRefuseGuarantee) (*response.ResponseMerchantRefuseGuarantee, error) {
 	result := &response.ResponseMerchantRefuseGuarantee{}
 
@@ -156,6 +178,8 @@ func (comp *Client) MerchantRefuseGuarantee(ctx context.Context, data *request.R
 	return result, err
 }
 
+// MerchantUpdateAftersale 商家协商
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_merchantupdateaftersale.html
 func (comp *Client) MerchantUpdateAftersale(ctx context.Context, data *request.RequestMerchantUpdateAftersale) (*response.ResponseMerchantUpdateAftersale, error) {
 	result := &response.ResponseMerchantUpdateAftersale{}
 
@@ -169,6 +193,8 @@ func (comp *Client) MerchantUpdateAftersale(ctx context.Context, data *request.R
 	return result, err
 }
 
+// GetAftersaleReason 获取全量售后原因
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_getaftersalereason.html
 func (comp *Client) GetAftersaleReason(ctx context.Context, data *request.RequestGetAftersaleReason) (*response.ResponseGetAftersaleReason, error) {
 	result := &response.ResponseGetAftersaleReason{}
 
@@ -182,6 +208,8 @@ func (comp *Client) GetAftersaleReason(ctx context.Context, data *request.Reques
 	return result, err
 }
 
+// RejectApply 拒绝售后
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_rejectapply.html
 func (comp *Client) RejectApply(ctx context.Context, data *request.RequestRejectApply) (*response.ResponseRejectApply, error) {
 	result := &response.ResponseRejectApply{}
 
@@ -195,6 +223,8 @@ func (comp *Client) RejectApply(ctx context.Context, data *request.RequestReject
 	return result, err
 }
 
+// RejectExchangeReship 换货拒绝发货
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_rejectexchangereship.html
 func (comp *Client) RejectExchangeReship(ctx context.Context, data *request.RequestRejectExchangeReship) (*response.ResponseRejectExchangeReship, error) {
 	result := &response.ResponseRejectExchangeReship{}
 
@@ -208,6 +238,8 @@ func (comp *Client) RejectExchangeReship(ctx context.Context, data *request.Requ
 	return result, err
 }
 
+// GetAftersaleRejectReason 获取拒绝售后原因
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_getaftersalerejectreason.html
 func (comp *Client) GetAftersaleRejectReason(ctx context.Context, data *request.RequestGetAftersaleRejectReason) (*response.ResponseGetAftersaleRejectReason, error) {
 	result := &response.ResponseGetAftersaleRejectReason{}
 
@@ -221,6 +253,8 @@ func (comp *Client) GetAftersaleRejectReason(ctx context.Context, data *request.
 	return result, err
 }
 
+// UploadRefundCertificate 上传退款凭证
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_uploadrefundcertificate.html
 func (comp *Client) UploadRefundCertificate(ctx context.Context, data *request.RequestUploadRefundCertificate) (*response.ResponseUploadRefundCertificate, error) {
 	result := &response.ResponseUploadRefundCertificate{}
 
@@ -234,6 +268,8 @@ func (comp *Client) UploadRefundCertificate(ctx context.Context, data *request.R
 	return result, err
 }
 
+// RefundPriceDiff 代用户发起退差价
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_refundpricediff.html
 func (comp *Client) RefundPriceDiff(ctx context.Context, data *request.RequestRefundPriceDiff) (*response.ResponseRefundPriceDiff, error) {
 	result := &response.ResponseRefundPriceDiff{}
 
@@ -247,6 +283,8 @@ func (comp *Client) RefundPriceDiff(ctx context.Context, data *request.RequestRe
 	return result, err
 }
 
+// ApplyVirtualTelnum 售后单兑换虚拟号
+// https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_applyvirtualtelnum.html
 func (comp *Client) ApplyVirtualTelnum(ctx context.Context, data *request.RequestApplyVirtualTelnum) (*response.ResponseApplyVirtualTelnum, error) {
 	result := &response.ResponseApplyVirtualTelnum{}
 

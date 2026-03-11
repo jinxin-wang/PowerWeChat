@@ -13,6 +13,8 @@ type Client struct {
 	BaseClient *kernel.BaseClient
 }
 
+// GetShopFinderAuthorizationList 获取授权视频号列表
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderauthorizationlist.html
 func (comp *Client) GetShopFinderAuthorizationList(ctx context.Context, data *request.RequestGetShopFinderAuthorizationList) (*respCompass.ResponseGetShopFinderAuthorizationList, error) {
 	result := &respCompass.ResponseGetShopFinderAuthorizationList{}
 
@@ -26,6 +28,8 @@ func (comp *Client) GetShopFinderAuthorizationList(ctx context.Context, data *re
 	return result, err
 }
 
+// GetShopFinderList 获取带货达人列表
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderlist.html
 func (comp *Client) GetShopFinderList(ctx context.Context, data *request.RequestGetShopFinderList) (*respCompass.ResponseGetShopFinderList, error) {
 	result := &respCompass.ResponseGetShopFinderList{}
 
@@ -39,6 +43,8 @@ func (comp *Client) GetShopFinderList(ctx context.Context, data *request.Request
 	return result, err
 }
 
+// GetShopFinderOverall 获取带货数据概览
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderoverall.html
 func (comp *Client) GetShopFinderOverall(ctx context.Context, data *request.RequestGetShopFinderOverall) (*respCompass.ResponseGetShopFinderOverall, error) {
 	result := &respCompass.ResponseGetShopFinderOverall{}
 
@@ -52,6 +58,8 @@ func (comp *Client) GetShopFinderOverall(ctx context.Context, data *request.Requ
 	return result, err
 }
 
+// GetShopFinderProductList 获取带货达人商品列表
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderproductlist.html
 func (comp *Client) GetShopFinderProductList(ctx context.Context, data *request.RequestGetShopFinderProductList) (*respCompass.ResponseGetShopFinderProductList, error) {
 	result := &respCompass.ResponseGetShopFinderProductList{}
 
@@ -65,6 +73,8 @@ func (comp *Client) GetShopFinderProductList(ctx context.Context, data *request.
 	return result, err
 }
 
+// GetShopFinderProductOverall 获取带货达人详情
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderproductoverall.html
 func (comp *Client) GetShopFinderProductOverall(ctx context.Context, data *request.RequestGetShopFinderProductOverall) (*respCompass.ResponseGetShopFinderProductOverall, error) {
 	result := &respCompass.ResponseGetShopFinderProductOverall{}
 
@@ -78,6 +88,8 @@ func (comp *Client) GetShopFinderProductOverall(ctx context.Context, data *reque
 	return result, err
 }
 
+// GetShopLiveList 获取店铺开播列表
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshoplivelist.html
 func (comp *Client) GetShopLiveList(ctx context.Context, data *request.RequestGetShopLiveList) (*respCompass.ResponseGetShopLiveList, error) {
 	result := &respCompass.ResponseGetShopLiveList{}
 
@@ -91,6 +103,8 @@ func (comp *Client) GetShopLiveList(ctx context.Context, data *request.RequestGe
 	return result, err
 }
 
+// GetShopOverall 获取电商数据概览
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopoverall.html
 func (comp *Client) GetShopOverall(ctx context.Context, data *request.RequestGetShopOverall) (*respCompass.ResponseGetShopOverall, error) {
 	result := &respCompass.ResponseGetShopOverall{}
 
@@ -104,6 +118,8 @@ func (comp *Client) GetShopOverall(ctx context.Context, data *request.RequestGet
 	return result, err
 }
 
+// GetShopProductData 获取商品详细信息
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopproductdata.html
 func (comp *Client) GetShopProductData(ctx context.Context, data *request.RequestGetShopProductData) (*respCompass.ResponseGetShopProductData, error) {
 	result := &respCompass.ResponseGetShopProductData{}
 
@@ -117,6 +133,8 @@ func (comp *Client) GetShopProductData(ctx context.Context, data *request.Reques
 	return result, err
 }
 
+// GetShopProductList 获取商品列表
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopproductlist.html
 func (comp *Client) GetShopProductList(ctx context.Context, data *request.RequestGetShopProductList) (*respCompass.ResponseGetShopProductList, error) {
 	result := &respCompass.ResponseGetShopProductList{}
 
@@ -130,6 +148,8 @@ func (comp *Client) GetShopProductList(ctx context.Context, data *request.Reques
 	return result, err
 }
 
+// GetShopSaleProfileData 获取店铺人群数据
+// https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopsaleprofiledata.html
 func (comp *Client) GetShopSaleProfileData(ctx context.Context, data *request.RequestGetShopSaleProfileData) (*respCompass.ResponseGetShopSaleProfileData, error) {
 	result := &respCompass.ResponseGetShopSaleProfileData{}
 
