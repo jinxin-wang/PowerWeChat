@@ -1,14 +1,5 @@
 # PowerWeChat SDK
 
-[![Go Build](https://github.com/ArtisanCloud/PowerWeChat/actions/workflows/go-build.yml/badge.svg?branch=release%2F3.0.0)](https://github.com/ArtisanCloud/PowerWeChat/actions/workflows/go-build.yml)
-[![Go Test](https://github.com/ArtisanCloud/PowerWeChat/actions/workflows/go-test.yml/badge.svg?branch=release%2F3.0.0)](https://github.com/ArtisanCloud/PowerWeChat/actions/workflows/go-test.yml)
-
-![star](https://gitcode.com/ArtisanCloud/PowerWechat/star/badge.svg)
-
-你的[Star](https://github.com/ArtisanCloud/PowerWeChat/stargazers "Star")，是对我们最好的支持！也是我们坚持的动力！
-
----
-
 PowerWeChat是一款基于Golang的微信SDK开发框架。目前已经覆盖了微信小程序、企业微信、微信支付等绝大部分场景的API。
 
 PowerWeChat致力于减少微信开发中的各种上手难度，使用者只需要关心API使用，不需要关注底层微信开发中需要用到各种AES加密和解密、签名以及验证，回调通知加解密等。
@@ -23,14 +14,14 @@ PowerWeChat致力于减少微信开发中的各种上手难度，使用者只需
 ## 快速上手
 
 ```bash
-go get -u github.com/ArtisanCloud/PowerWeChat/v3
+go get -u github.com/jinxin-wang/PowerWeChat/v3
 ```
 
 示范：初始化实例对象，调用小程序的授权登陆接口
 
 ```go
 import (
-	"github.com/ArtisanCloud/PowerWeChat/v3/src/miniProgram"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/miniProgram"
 	"os"
 )
 
@@ -62,18 +53,6 @@ printf(rs.OpenID)
 ### 版本升级描述(V2->V3) 
 * 接口添加context参数
 * 解决v2的自动refresh token问题
-
-### 如果你觉得这个项目对你有帮助，可以请作者喝杯咖啡
-<img src="https://powerwechat.artisan-cloud.com/assets/receive_code.3KAeHaPN.jpg" alt="请扫我" style="display:inline; width: 150px;"/>
-
-### 感谢打赏者，对该项目的支持
-<a href="https://github.com/qindj">
-  <img width="50" src="https://avatars.githubusercontent.com/u/1707762?v=4">
-</a>
-
-<a href="https://github.com/jhonor777">
-  <img width="50" src="https://avatars.githubusercontent.com/u/31689092?v=4">
-</a>
 
 # 视频教程
 
@@ -172,109 +151,16 @@ printf(rs.OpenID)
 
 更多内容请在[官方文档](https://powerwechat.artisan-cloud.com/zh/start/) 里面进行查阅。
 
-
-## 产品诞生背景
-团队也是很多同学一样，从 PHP 转向 Golang，具体为什么，有什么好处，就不用我这里多介绍了吧。 但是现在因为微信的生态做私域化管理是得天独厚，所以我们公司也开发了蛮多企业微信的功能。只是在转型 golang 的过程中，没有找到像 （[easywechat](https://easywechat.com)）这样好用的 sdk。所以我们就自己想为 golang 的同学们做一点贡献。产品会长期维护，迭代，希望同学们有兴趣在使用的过程中，多给意见。
-
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=ArtisanCloud/PowerWeChat&type=Date)](https://star-history.com/#ArtisanCloud/PowerWeChat&Date)
-
-
-<!-- 相关产品推荐 -->
 ## 相关产品推荐
 
 [PowerX 基于PowerWechat的客域系统](https://github.com/ArtisanCloud/PowerX)  
 [WeyUI 一套微信生态前端组件库，适配PowerX非常友好](https://github.com/yaoyaochil/WeyUI)  
-[BaiduTrans 百度翻译Go-SDK，AIGC后台提词翻译神器](https://github.com/ArtisanCloud/BaiduTrans)
-
-<!-- CONTRIBUTORS -->
-## Contributors
-
-特别感谢 <a href="https://github.com/northseadl">Northseadl</a>为版本3所做的贡献
-
-<a href="https://github.com/northseadl">
-  <img width="50" src="https://avatars.githubusercontent.com/u/99570485?v=4">
-</a>
-
----
-
-
-<a href="https://github.com/AlvinQinwen">
-  <img width="50" src="https://avatars.githubusercontent.com/u/40420020?v=4">
-</a>
-<a href="https://github.com/yosink">
-  <img width="50" src="https://avatars.githubusercontent.com/u/10346255?v=4">
-</a>
-<a href="https://github.com/mryangjiang">
-  <img width="50" src="https://avatars.githubusercontent.com/u/23132307?v=4">
-</a>
-<a href="https://github.com/zhou7507">
-  <img width="50" src="https://avatars.githubusercontent.com/u/51078932?v=4">
-</a>
-<a href="https://github.com/jeffid">
-  <img width="50" src="https://avatars.githubusercontent.com/u/22427722?v=4">
-</a>
-<a href="https://github.com/bugstark">
-  <img width="50" src="https://avatars.githubusercontent.com/u/29302590?v=4">
-</a>
-<a href="https://github.com/sohenk">
-  <img width="50" src="https://avatars.githubusercontent.com/u/5018122?v=4">
-</a>
-<a href="https://github.com/YangCSir">
-  <img width="50" src="https://avatars.githubusercontent.com/u/21410207?v=4">
-</a>
-<a href="https://github.com/obe007">
-  <img width="50" src="https://avatars.githubusercontent.com/u/16457340?v=4">
-</a>
-<a href="https://github.com/panw3i">
-  <img width="50" src="https://avatars.githubusercontent.com/u/16938611?v=4">
-</a>
-<a href="https://github.com/tesun">
-  <img width="50" src="https://avatars.githubusercontent.com/u/36953434?v=4">
-</a>
-<a href="https://github.com/liyiwu">
-  <img width="50" src="https://avatars.githubusercontent.com/u/895138?v=4">
-</a>
-<a href="https://github.com/erlangzhang">
-  <img width="50" src="https://avatars.githubusercontent.com/u/782958?v=4">
-</a>
-<a href="https://github.com/GJHaoo">
-  <img width="50" src="https://avatars.githubusercontent.com/u/31203943?v=4">
-</a>
-
-<a href="https://github.com/beijibeijing">
-  <img width="50" src="https://avatars.githubusercontent.com/u/34858346?v=4">
-</a>
-<a href="https://github.com/tss-tss">
-  <img width="50" src="https://avatars.githubusercontent.com/u/76192676?v=4">
-</a>
-
-
-
-<br><br>
-<a href="https://github.com/ArtisanCloud/PowerWeChat/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ArtisanCloud/PowerWechat" />
-</a >
 
 
 
 
-## 联系我们
-
-如果有任何意见，欢迎在Github Issue上提供意见反馈。同时，也欢迎扫描下方二维码加入微信讨论群。
 
 
 
-
-## 产品主要维护者
-
-Michael Hu
-
-申请添加好友时，请备注产品名称，比如：“我关注PowerWechat”
-
-<img src="https://powerwechat.artisan-cloud.com/assets/contact-qr-matrix-x.CMxSV8Gs.jpg" alt="请扫我" style="display:inline; width: 150px;"/>
 
 
