@@ -10,6 +10,7 @@ import (
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/aftersale"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/base"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/compass"
+	"github.com/jinxin-wang/PowerWeChat/v3/src/store/league"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/logistics"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/manage"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/order"
@@ -29,6 +30,7 @@ type Store struct {
 	Aftersale *aftersale.Client
 	Logistics *logistics.Client
 	Compass   *compass.Client
+	League    *league.Client
 	Vip       *vip.Client
 
 	Logger *logger.Logger
@@ -150,6 +152,11 @@ func NewStore(config *UserConfig, extraInfos ...*kernel.ExtraInfo) (*Store, erro
 		return nil, err
 	}
 
+	app.League, err = league.RegisterProvider(app)
+	if err != nil {
+		return nil, err
+	}
+
 	app.Vip, err = vip.RegisterProvider(app)
 	if err != nil {
 		return nil, err
@@ -189,6 +196,8 @@ func (app *Store) GetComponent(name string) interface{} {
 		return app.Logistics
 	case "Compass":
 		return app.Compass
+	case "League":
+		return app.League
 	case "Vip":
 		return app.Vip
 	case "Logger":
