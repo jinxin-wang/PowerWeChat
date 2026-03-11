@@ -5,7 +5,6 @@ import (
 
 	"github.com/ArtisanCloud/PowerLibs/v3/object"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/kernel"
-	respKernel "github.com/jinxin-wang/PowerWeChat/v3/src/kernel/response"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/league/request"
 	"github.com/jinxin-wang/PowerWeChat/v3/src/store/league/response"
 )
